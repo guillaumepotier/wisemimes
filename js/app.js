@@ -12,7 +12,7 @@
 
 		init: function () {
 			$('#game').addClass('hide');
-			this.duration = 120;
+			this.duration = 60;
 
 			this.setBestScore(window.localStorage.best);
 			this.bindEvents();
@@ -208,19 +208,15 @@
 				$slide = $('<div />').addClass('slide next hide').appendTo('#slider'),
 				img = new Image();
 
-			console.log('preload slide', index, url, img);
-
 			$(img)
 				.addClass('img-thumbnail')
 				.one('load', _.bind(function (event) {
 					// append img to next slide
 					$slide.append(img);
 					// resolve
-					console.log('slide prelaoded', index, url,  $slide.get(0), img);
 					dfd.resolve(index, url, $slide.get(0), img);
 				}, this))
 				.one('error', _.bind(function (event) {
-					console.error('invalid url at index', index, url);
 					// remove invalid slide url
 					window.slides.splice(index, 1);
 					// preload another slide
@@ -232,15 +228,11 @@
 			return dfd.promise();
 		},
 
-
 		showSlide: function () {
 			var $current = this.$('#slider .slide.current');
 
-			console.log('show slide', this.preloadDfd.state());
-
 			return (this.preloadDfd || this.preloadSlide())
 				.done(_.bind(function (index, url, slide, img) {
-					console.log('ready to show slide', index, url, slide, img);
 					// remove loaded slide url
 					window.slides.splice(index, 1);
 					$(slide).removeClass('hide');
