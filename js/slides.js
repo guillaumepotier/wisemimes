@@ -53,13 +53,11 @@ window.slides = [
 "http://4.bp.blogspot.com/-FWmOyN2wFTI/TlRKQ2luZeI/AAAAAAAABgE/W3cKvcwmdoo/s1600/80_tif.jpg",
 "http://img1.rnkr-static.com/node_img/96/1918857/full/robert-de-niro-recording-artists-and-groups-photo-1.jpg",
 "http://www.empireonline.com/images/uploaded/men-vin-diesel-bald-1711592293(1).jpg",
-"http://img1.gtsstatic.com/wallpapers/6381bbc236fb373d5969920f7bb38262_large.jpeg",
 "http://jeetkunedo17.e-monsite.com/medias/images/bruce-lee-4.jpg",
 "http://www.freewebs.com/tombraidersector/Angelina-Jolie.jpg",
 "http://images2.fanpop.com/image/photos/10300000/pitt-brad-pitt-10357723-1200-944.jpg",
 "http://www.odysseeducinema.fr/galerie/Hanks%20Tom/TomHanks16.jpg",
 "http://www.starok.com/html/photos/more/clara-morgane-7875.jpg",
-"http://www.hdwpapers.com/walls/jean_reno_wallpaper_7-wide.jpg",
 "http://www.tophostgames.com/wp-content/uploads/2013/09/the-rock-as-kratosfodecasting--the-rock-as-kratos-pp1pf6fh.jpg"
 
 ];
