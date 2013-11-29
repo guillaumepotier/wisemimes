@@ -1,0 +1,188 @@
+html, body {
+	height: 100%;
+	min-height: 100%;
+}
+
+#main {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	overflow: hidden;
+}
+
+#main .page {
+	position: absolute;
+	display: table;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#main .page header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right:	0px;
+	height: 50px;
+}
+
+#main .content {
+	max-width: 100%;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#home #best {
+	font-size: 40px;
+	margin-top: -100px;
+	margin-bottom: 20px;
+}
+
+#game {
+	background-color: #eeeeee;
+	-webkit-transition: top 0.5s ease;
+	z-index: 2;
+}
+
+#game.hide {
+	top: 100%;
+	display: table !important;
+}
+
+#game #countdown {
+	font-size: 64px;
+	font-weight: bold;
+}
+
+#game #countdown.hide {
+	display: none;
+}
+
+#game #timer,
+#game #score {
+	display: none;
+	position: absolute;
+	color: black;
+	line-height: 48px;
+	font-size: 48px;
+	font-weight: bold;
+}
+
+#game #timer {
+	top: 10px;
+	right: 10px;
+}
+
+#game #score {
+	top: 10px;
+	left: 10px;
+}
+
+#game[data-status=started] #timer,
+#game[data-status=started] #score {
+	display: inline-block;
+}
+
+#game[data-status=ended] #score {
+	display: inline-block;
+	top: 50%;
+	width: 100%;
+	margin-top: -40px;
+	font-size: 100px;
+	-webkit-transition: all 1s ease;
+}
+
+#game #slider {
+	display: none;
+	position: relative;
+	margin-left: 30px;
+	margin-right: 30px;
+	height: 500px;
+	-webkit-transition: opacity 1s ease;
+}
+
+#game[data-status=started] #slider {
+	display: block;
+}
+
+#game[data-status=ended] #slider {
+	display: block;
+	opacity: 0.2;
+}
+
+#game #slider .slide {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: left 0.3s ease;
+}
+
+#game #slider .slide.next {
+	left: -100%;
+}
+
+#game #slider .slide.previous {
+	left: 100%;
+}
+
+#game #slider .slide img {
+	height: 500px;
+}
+
+#game.ok #slider .slide:before {
+	content:'';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: transparent url(../img/check.png) center center no-repeat;
+}
+#game.ko #slider .slide:after {
+	content:'';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: transparent url(../img/wrong.png) center center no-repeat;
+}
+
+#game.ok.ko #slider .slide:before {
+	left: -128px;
+}
+
+#game.ok.ko #slider .slide:after {
+	left: 128px;
+}
+
+.spread {
+	-webkit-animation: spread 1s infinite;
+}
+
+.spread-one {
+	-webkit-animation: spread 1s;
+}
+
+@-webkit-keyframes spread {
+	0% {
+		font-size: 64px;
+		opacity: 1;
+	}
+
+	99% {
+		font-size: 320px;
+		opacity: 0;
+	}
+	100% {
+		font-size: 64px;
+		opacity: 1;
+	}
+}
